@@ -34,6 +34,8 @@ CREATE TABLE player (
     salary DECIMAL(4, 2)
 );
 
+ALTER TABLE player ADD update_date DATE NOT NULL default '2023-05-23';
+
 CREATE TABLE tournament (
     tournament_id BIGSERIAL NOT NULL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
@@ -46,3 +48,4 @@ CREATE TABLE team_tournament (
     team_id BIGSERIAL REFERENCES team (team_id) NOT NULL,
     PRIMARY KEY (tournament_id, team_id)
 );
+
